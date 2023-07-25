@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "tinyorm-helloworld",
+  "version-semver": "0.1.0",
+  "description": "Hello world console application for TinyORM C++ library",
+  "homepage": "https://github.com/silverqx/TinyORM-HelloWorld",
+  "documentation": "https://www.tinyorm.org/building/hello-world",
+  "maintainers": "Silver Zachara <silver.zachara@gmail.com>",
+  "supports": "!(uwp | arm | android | emscripten | osx | ios | xbox | freebsd | openbsd | wasm32)",
+  "dependencies": [
+    "range-v3",
+    "tabulate",
+    {
+      "name": "tinyorm",
+      "default-features": false,
+      "features": ["orm", "sql-sqlite"]
+    },
+    {
+      "name": "qtbase",
+      "default-features": false
+    }
+  ]
+}
