@@ -36,8 +36,8 @@ if(RESOLVE_TINYORM STREQUAL "FetchContent")
 
 # Build or Install tree by CMAKE_PREFIX_PATH
 elseif(RESOLVE_TINYORM STREQUAL "None" OR RESOLVE_TINYORM STREQUAL "Manual")
-    #list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/tinyorm.org/TinyORM/TinyORM-builds-cmake/build-debug")
-    #list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/TinyORM/TinyORM-builds-cmake/build-TinyORM-Desktop_Qt_6_5_3_MSVC2022_64bit-Debug")
+#    list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/tinyorm.org/TinyORM/TinyORM-builds-cmake/build-debug")
+#    list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/TinyORM/TinyORM-builds-cmake/build-TinyORM-Desktop_Qt_6_5_3_MSVC2022_64bit-Debug")
 endif()
 
 add_executable(HelloWorld
