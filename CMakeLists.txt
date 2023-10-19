@@ -46,7 +46,7 @@ add_executable(HelloWorld
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
-find_package(TinyOrm 0.35.0 CONFIG REQUIRED)
+find_package(TinyOrm 0.36.1 CONFIG REQUIRED)
 
 target_link_libraries(HelloWorld
     PRIVATE
