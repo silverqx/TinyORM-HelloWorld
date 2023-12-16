@@ -11,7 +11,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(RESOLVE_TINYORM FetchContent CACHE STRING
     "How to resolve the TinyORM library, allowed values are FetchContent, VcpkgManifest, \
-or None"
+or None (Manual)"
+)
+# Drop-down combo box for CMake GUI-s
+set_property(CACHE RESOLVE_TINYORM
+    PROPERTY STRINGS FetchContent VcpkgManifest Manual None
 )
 
 # Use proper vcpkg.json.FetchContent.example or vcpkg.json.VcpkgManifest.example
