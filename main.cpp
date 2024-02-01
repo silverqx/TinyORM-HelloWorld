@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     try {
         /* Needed from Qt v6.5.3 to avoid:
            qt.core.qobject.connect: QObject::connect(QObject, Unknown): invalid nullptr parameter */
-        QCoreApplication app(argc, argv);
+        const QCoreApplication app(argc, argv);
 
         run();
     } catch (const std::exception &e) {
