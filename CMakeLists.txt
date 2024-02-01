@@ -43,6 +43,7 @@ elseif(RESOLVE_TINYORM STREQUAL "None" OR RESOLVE_TINYORM STREQUAL "Manual")
    # list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/tinyorm.org/TinyORM/TinyORM-builds-cmake/build-debug")
    # list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/TinyORM/TinyORM-builds-cmake/build-TinyORM-Desktop_Qt_6_6_1_MSVC2022_64bit-Debug")
    # list(APPEND CMAKE_PREFIX_PATH "E:/c/qMedia/TinyORM/TinyORM-builds-cmake/build-cmake-debug")
+   # list(APPEND CMAKE_PREFIX_PATH "E:/c/qMedia/TinyORM/TinyORM-builds-cmake/build-ninja-multi")
 endif()
 
 add_executable(HelloWorld
