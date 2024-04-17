@@ -1,7 +1,12 @@
-# Optimized for Clang-Tidy v17
+# Optimized for Clang-Tidy v18
 ---
+InheritParentConfig:          false
+WarningsAsErrors:             '*'
 HeaderFileExtensions:         ['h','hpp']
 ImplementationFileExtensions: ['cpp']
+HeaderFilterRegex:            ''
+FormatStyle:                  none
+UseColor:                     true
 Checks:
   - -*
   - bugprone-*
@@ -18,25 +23,14 @@ Checks:
   - hicpp-exception-baseclass
   - hicpp-multiway-paths-covered
   - -bugprone-easily-swappable-parameters
+  # This check is triggered for every TU so disabling
   - -bugprone-macro-parentheses
   - -clang-analyzer-optin.osx.*
   - -clang-analyzer-osx.*
-  - -cppcoreguidelines-avoid-c-arrays
-  - -cppcoreguidelines-avoid-magic-numbers
-  - -cppcoreguidelines-avoid-non-const-global-variables
+  - -clang-analyzer-webkit.*
   - -cppcoreguidelines-macro-usage
-  - -cppcoreguidelines-non-private-member-variables-in-classes
-  - -cppcoreguidelines-pro-bounds-pointer-arithmetic
-  - -cppcoreguidelines-pro-type-const-cast
-  - -cppcoreguidelines-pro-type-reinterpret-cast
-  - -cppcoreguidelines-pro-type-vararg
-  - -cppcoreguidelines-special-member-functions
-  - -google-default-arguments
-  - -google-readability-braces-around-statements
-  - -google-readability-function-size
   - -google-readability-todo
   - -llvm-header-guard
-  - -llvm-qualified-auto
   - -misc-include-cleaner
   - -misc-non-private-member-variables-in-classes
   - -modernize-use-nodiscard
@@ -45,21 +39,22 @@ Checks:
   - -readability-identifier-length
   - -readability-magic-numbers
   # All below are only aliases
+  # Enabled
+  - -cppcoreguidelines-avoid-c-arrays
   - -cppcoreguidelines-noexcept-destructor
   - -cppcoreguidelines-noexcept-move-operations
   - -cppcoreguidelines-noexcept-swap
   - -cppcoreguidelines-use-default-member-init
-WarningsAsErrors:    '*'
-HeaderFilterRegex:   ''
-FormatStyle:         none
-InheritParentConfig: false
-UseColor:            true
+  - -google-readability-function-size
+  - -google-readability-namespace-comments
+  # Disabled above too
+  - -cppcoreguidelines-avoid-magic-numbers
+  - -cppcoreguidelines-non-private-member-variables-in-classes
+  - -google-readability-braces-around-statements
 CheckOptions:
-  - key:             cppcoreguidelines-avoid-do-while.IgnoreMacros
-    value:           true
-  - key:             cppcoreguidelines-rvalue-reference-param-not-moved.AllowPartialMove
-    value:           true
-  - key:             google-readability-namespace-comments.ShortNamespaceLines
-    value:           '5'
-  - key:             llvm-namespace-comment.ShortNamespaceLines
-    value:           '5'
+  - key:   cppcoreguidelines-avoid-do-while.IgnoreMacros
+    value: true
+  - key:   cppcoreguidelines-rvalue-reference-param-not-moved.AllowPartialMove
+    value: true
+  - key:   llvm-namespace-comment.ShortNamespaceLines
+    value: '5'
