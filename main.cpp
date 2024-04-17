@@ -97,7 +97,9 @@ int main(int argc, char *argv[])
 /*
    Expected output:
 
-   TinyORM 0.34.0 (x86_64-little_endian-llp64 shared debug build; by MSVC 2022 (1936))
+   Qt 6.7.0 (x86_64-little_endian-llp64 shared (dynamic) debug build; by MSVC 2019)
+   TinyORM 0.36.5 (x86_64-little_endian-llp64 shared debug build; by MSVC 2022 (1939))
+
    Executed prepared query (8ms, -1 results, 0 affected, tinyorm_default) : select * from posts
    1 "First Post"
    2 "Second Post"
