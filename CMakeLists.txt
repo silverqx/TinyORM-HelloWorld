@@ -50,6 +50,8 @@ add_executable(HelloWorld
   main.cpp
 )
 
+target_compile_definitions(HelloWorld PUBLIC PROJECT_TINYORM_HELLOWORLD_TINYDRIVERS)
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 find_package(TinyOrm 0.36.5 CONFIG REQUIRED)
