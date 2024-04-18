@@ -26,9 +26,13 @@ if(RESOLVE_TINYORM STREQUAL "FetchContent")
     set(FETCHCONTENT_QUIET OFF)
     include(FetchContent)
 
+    # To avoid long paths problem on Windows
+    # set(FETCHCONTENT_BASE_DIR "O:/FetchContent/HelloWorld")
+
     FetchContent_Declare(TinyOrm
         GIT_REPOSITORY https://github.com/silverqx/TinyORM.git
         GIT_TAG        origin/main
+        # GIT_TAG        origin/silverqx-develop
         OVERRIDE_FIND_PACKAGE
     )
 
@@ -41,7 +45,7 @@ if(RESOLVE_TINYORM STREQUAL "FetchContent")
 # Build or Install tree by CMAKE_PREFIX_PATH
 elseif(RESOLVE_TINYORM STREQUAL "None" OR RESOLVE_TINYORM STREQUAL "Manual")
    # list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/tinyorm.org/TinyORM/TinyORM-builds-cmake/build-debug")
-   # list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/TinyORM/TinyORM-builds-cmake/build-TinyORM-Desktop_Qt_6_6_1_MSVC2022_64bit-Debug")
+   # list(APPEND CMAKE_PREFIX_PATH "O:/Code/c/qMedia/TinyORM/TinyORM-builds-cmake/build-TinyORM-Desktop_Qt_6_7_0_MSVC2022_64bit-Debug")
    # list(APPEND CMAKE_PREFIX_PATH "E:/c/qMedia/TinyORM/TinyORM-builds-cmake/build-cmake-debug")
    # list(APPEND CMAKE_PREFIX_PATH "E:/c/qMedia/TinyORM/TinyORM-builds-cmake/build-ninja-multi")
 endif()
