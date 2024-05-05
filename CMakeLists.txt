@@ -58,7 +58,7 @@ target_compile_definitions(HelloWorld PUBLIC PROJECT_TINYORM_HELLOWORLD_TINYDRIV
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
-find_package(TinyOrm 0.37.2 CONFIG REQUIRED)
+find_package(TinyOrm 0.37.3 CONFIG REQUIRED)
 
 target_link_libraries(HelloWorld
     PRIVATE
