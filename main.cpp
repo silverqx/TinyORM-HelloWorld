@@ -12,6 +12,8 @@
 #include <orm/libraryinfo.hpp>
 #include <orm/tiny/model.hpp>
 
+using Qt::StringLiterals::operator""_s;
+
 using Orm::Constants::ID;
 using Orm::Constants::NAME;
 using Orm::Constants::NEWLINE;
@@ -45,7 +47,7 @@ void run()
     auto manager = DB::create({
         {driver_,   QSQLITE},
         {database_, qEnvironmentVariable("TINYORM_HELLOWORLD_DB_SQLITE_DATABASE",
-                                         "../../HelloWorld.sqlite3")},
+                                         u"../../HelloWorld.sqlite3"_s)},
         {check_database_exists, true},
     });
 
@@ -55,7 +57,7 @@ void run()
 
     // Select using QueryBuilder
     {
-        auto posts = DB::select("select * from posts");
+        auto posts = DB::select(u"select * from posts"_s);
 
         while(posts.next())
             std::cout << posts.value(ID).toULongLong() << SPACE << QUOTE
