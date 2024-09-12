@@ -29,7 +29,10 @@ using Orm::LibraryInfo;
 using Orm::Tiny::Model;
 using Orm::Utils::Helpers;
 
-class Post final : public Model<Post>
+namespace
+{
+
+class Post final : public Model<Post> // NOLINT(bugprone-exception-escape)
 {
     friend Model;
     using Model::Model;
@@ -72,6 +75,8 @@ void run()
                       << post.getAttribute<QString>(NAME) << QUOTE << NEWLINE;
     }
 }
+
+} // namespace
 
 int main(int argc, char *argv[])
 {
